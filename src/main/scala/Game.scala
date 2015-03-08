@@ -28,8 +28,6 @@ case class Game(
     )
   }
 
-  //lazy val situation = Situation(board, player)
-
   def isStandardInit = board.pawns == Nil
 }
 
