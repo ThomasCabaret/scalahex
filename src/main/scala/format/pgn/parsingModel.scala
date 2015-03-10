@@ -1,4 +1,4 @@
-package chess
+package hex
 package format.pgn
 
 case class ParsedPgn(tags: List[Tag], sans: List[San])
@@ -6,7 +6,7 @@ case class ParsedPgn(tags: List[Tag], sans: List[San])
 // Standard Algebraic Notation
 sealed trait San {
 
-  def apply(situation: Situation): Valid[chess.Move]
+  def apply(situation: Situation): Valid[hex.Move]
 }
 
 case class Std(
@@ -24,8 +24,8 @@ case class Std(
     checkmate = s.checkmate,
     promotion = s.promotion)
 
-  def apply(situation: Situation): Valid[chess.Move] =
-    situation.board.pieces.foldLeft(none[chess.Move]) {
+  def apply(situation: Situation): Valid[hex.Move] =
+    situation.board.pieces.foldLeft(none[hex.Move]) {
       case (None, (pos, piece)) if piece.color == situation.color && piece.role == role && compare(file, pos.x) && compare(rank, pos.y) && piece.eyesMovable(pos, dest) =>
         val a = Actor(piece, pos, situation.board)
         a trustedMoves false find { m =>
@@ -56,7 +56,7 @@ case class Castle(
     check = s.check,
     checkmate = s.checkmate)
 
-  def apply(situation: Situation): Valid[chess.Move] = for {
+  def apply(situation: Situation): Valid[hex.Move] = for {
     kingPos ← situation.board kingPosOf situation.color toValid "No king found"
     actor ← situation.board actorAt kingPos toValid "No actor found"
     move ← actor.castleOn(side).headOption toValid "Cannot castle / variant is " + situation.board.variant

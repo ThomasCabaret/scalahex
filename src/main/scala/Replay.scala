@@ -3,7 +3,7 @@ package hex
 //Ok reserve design, Valid?
 //Two last def a really hard to read
 
-import format.pgn.{ Parser, Reader, Tag }
+//import format.pgn.{ Parser, Reader, Tag }
 
 case class Replay(setup: Game, moves: List[Move], state: Game) {
 
@@ -20,7 +20,7 @@ object Replay {
 
   def apply(game: Game) = new Replay(game, Nil, game)
 
-  def apply(
+  /*def apply(
     moveStrs: List[String],
     initialFen: Option[String],
     variant: hex.variant.Variant): Valid[Replay] =
@@ -46,6 +46,6 @@ object Replay {
         case (x, _) => x
       }
     }
-  }.map(_._2.reverse)
+  }.map(_._2.reverse)*/
 }
 

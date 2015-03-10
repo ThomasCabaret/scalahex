@@ -1,9 +1,9 @@
-package chess
+package hex
 package format.pgn
 
 object Dumper {
 
-  def apply(situation: Situation, data: chess.Move, next: Situation): String = {
+  def apply(situation: Situation, data: hex.Move, next: Situation): String = {
     import data._
 
     ((promotion, piece.role) match {
@@ -46,7 +46,7 @@ object Dumper {
     }) + (if (next.check) if (next.checkMate) "#" else "+" else "")
   }
 
-  def apply(data: chess.Move): String = apply(
+  def apply(data: hex.Move): String = apply(
     data.before situationOf data.color,
     data,
     data.afterWithLastMove situationOf !data.color)

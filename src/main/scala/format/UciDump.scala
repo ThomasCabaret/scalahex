@@ -2,7 +2,7 @@ package hex
 package format
 //OK use of valid
 
-import chess.variant.Variant
+import hex.variant.Variant
 
 object UciDump {
 

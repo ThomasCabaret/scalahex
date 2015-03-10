@@ -43,7 +43,8 @@ object Pos {
 
   def xToString(x: Int) = (96 + x).toChar.toString
 
-  val all = //TODO
+  //val all = //TODO
+  val all = List(Pos(1,1))
 
   val allKeys: Map[String, Pos] = all map { pos => pos.key -> pos } toMap
 

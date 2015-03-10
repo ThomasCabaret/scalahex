@@ -1,4 +1,4 @@
-package chess
+package hex
 package format.pgn
 
 case class Tag(name: TagType, value: String) {

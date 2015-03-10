@@ -1,4 +1,4 @@
-package chess
+package hex
 package format
 
 import Pos.posAt
@@ -15,7 +15,7 @@ import Pos.posAt
  */
 object Visual {
 
-  def <<(source: String): Board = {
+  /*def <<(source: String): Board = {
     val lines = source.lines.toList
     val filtered = lines.size match {
       case 8          => lines
@@ -32,13 +32,13 @@ object Visual {
       } yield {
         posAt(x + 1, 8 - y) map { pos => pos -> (Color(c isUpper) - role) }
       }) flatten,
-      variant = chess.variant.Variant.default
+      variant = hex.variant.Variant.default
     )
-  }
+  }*/
 
   def >>(board: Board): String = >>|(board, Map.empty)
 
-  def >>|(board: Board, marks: Map[Iterable[Pos], Char]): String = {
+  /*def >>|(board: Board, marks: Map[Iterable[Pos], Char]): String = {
     val markedPoss: Map[Pos, Char] = marks.foldLeft(Map[Pos, Char]()) {
       case (marks, (poss, char)) => marks ++ (poss.toList map { pos => (pos, char) })
     }
@@ -47,7 +47,7 @@ object Visual {
         posAt(x, y) flatMap markedPoss.get getOrElse board(x, y).fold(' ')(_ forsyth)
       }
     } mkString
-  } map { """\s*$""".r.replaceFirstIn(_, "") } mkString "\n"
+  } map { """\s*$""".r.replaceFirstIn(_, "") } mkString "\n"*/
 
   def addNewLines(str: String) = "\n" + str + "\n"
 }

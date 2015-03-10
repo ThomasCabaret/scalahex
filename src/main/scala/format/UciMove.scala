@@ -1,4 +1,4 @@
-package chess
+package hex
 package format
 
 case class UciMove(orig: Pos, dest: Pos, promotion: Option[PromotableRole] = None) {

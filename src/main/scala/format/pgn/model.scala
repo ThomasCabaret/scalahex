@@ -1,4 +1,4 @@
-package chess
+package hex
 package format
 package pgn
 

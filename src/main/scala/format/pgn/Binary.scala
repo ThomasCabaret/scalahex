@@ -1,4 +1,4 @@
-package chess
+package hex
 package format.pgn
 
 import scala.util.Try

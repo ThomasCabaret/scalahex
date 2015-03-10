@@ -16,9 +16,9 @@ case class Game(
   def apply(move: Move): Game = {
     val newTurns = turns + 1
     copy(
-      board = board move,
+      //board = board.(move), what is the fucking syntax for this shit
       player = !player,
-      moves = move :: moves
+      moves = move :: moves,
       turns = newTurns,
       clock = clock map {
         case c: RunningClock => c step move.lag
