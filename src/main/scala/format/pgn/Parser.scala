@@ -11,7 +11,7 @@ import scalaz.Validation.{ success => succezz }
 // http://www.saremba.de/chessgml/standards/pgn/pgn-complete.htm
 object Parser extends scalaz.syntax.ToTraverseOps {
 
-  def full(pgn: String): Valid[ParsedPgn] = try {
+  /*def full(pgn: String): Valid[ParsedPgn] = try {
     for {
       splitted ← splitTagAndMoves(pgn)
       (tagStr, moveStr) = splitted
@@ -239,5 +239,5 @@ object Parser extends scalaz.syntax.ToTraverseOps {
       ~((line lift 0).map('[' ==))
     } match {
       case (tagLines, moveLines) => success(tagLines.mkString("\n") -> moveLines.mkString("\n"))
-    }
+    }*/
 }

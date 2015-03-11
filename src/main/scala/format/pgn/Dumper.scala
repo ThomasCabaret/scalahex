@@ -4,7 +4,7 @@ package format.pgn
 
 object Dumper {
 
-  def apply(situation: Situation, data: hex.Move, next: Situation): String = {
+  /*def apply(situation: Situation, data: hex.Move, next: Situation): String = {
     import data._
 
     ((promotion, piece.role) match {
@@ -50,5 +50,5 @@ object Dumper {
   def apply(data: hex.Move): String = apply(
     data.before situationOf data.color,
     data,
-    data.afterWithLastMove situationOf !data.color)
+    data.afterWithLastMove situationOf !data.color)*/
 }

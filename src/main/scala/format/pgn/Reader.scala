@@ -5,7 +5,7 @@ package format.pgn
 
 object Reader {
 
-  def full(pgn: String, tags: List[Tag] = Nil): Valid[Replay] =
+  /*def full(pgn: String, tags: List[Tag] = Nil): Valid[Replay] =
     fullWithSans(pgn, identity, tags)
 
   def moves(moveStrs: List[String], tags: List[Tag]): Valid[Replay] =
@@ -51,5 +51,5 @@ object Reader {
         g1 updateBoard (_ withVariant variant)
       }
       case (vg, _) => vg
-    }
+    }*/
 }

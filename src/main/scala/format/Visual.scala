@@ -36,7 +36,7 @@ object Visual {
     )
   }*/
 
-  def >>(board: Board): String = >>|(board, Map.empty)
+  //def >>(board: Board): String = >>|(board, Map.empty)
 
   /*def >>|(board: Board, marks: Map[Iterable[Pos], Char]): String = {
     val markedPoss: Map[Pos, Char] = marks.foldLeft(Map[Pos, Char]()) {

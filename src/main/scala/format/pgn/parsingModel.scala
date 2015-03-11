@@ -2,7 +2,7 @@ package hex
 package format.pgn
 //I dont know what this thing does
 
-case class ParsedPgn(tags: List[Tag], sans: List[San])
+/*case class ParsedPgn(tags: List[Tag], sans: List[San])
 
 // Standard Algebraic Notation
 sealed trait San {
@@ -62,4 +62,4 @@ case class Castle(
     actor ← situation.board actorAt kingPos toValid "No actor found"
     move ← actor.castleOn(side).headOption toValid "Cannot castle / variant is " + situation.board.variant
   } yield move
-}
+}*/
