@@ -9,6 +9,7 @@ case class Game(
     board: Board,
     player: Color = Red,
     moves: List[Move] = Nil,
+    swapped: Boolean = false,
     clock: Option[Clock] = None,
     turns: Int = 0,
     startedAtTurn: Int = 0) {
@@ -16,7 +17,7 @@ case class Game(
   def apply(move: Move): Game = {
     val newTurns = turns + 1
     copy(
-      //board = board.(move), what is the fucking syntax for this shit
+      board = board.apply(move),
       player = !player,
       moves = move :: moves,
       turns = newTurns,
@@ -28,13 +29,14 @@ case class Game(
     )
   }
 
-  def isStandardInit = board.pawns == Nil
+  def swap() = copy(swapped = true)
+
+  //def isStandardInit = board.pawns == Nil
 }
 
 object Game {
 
-  //TODO
-  def apply(variant: hex.variant.Variant): Game = new Game(
-    board = Board init variant
+  def apply(size: Int, variant: hex.variant.Variant): Game = new Game(
+    board = Board init(size, variant)
   )
 }
