@@ -1,5 +1,6 @@
 package hex
 package format.pgn
+//Its the pgn parser
 
 import variant.Variant
 

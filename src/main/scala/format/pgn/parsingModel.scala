@@ -1,5 +1,6 @@
 package hex
 package format.pgn
+//I dont know what this thing does
 
 case class ParsedPgn(tags: List[Tag], sans: List[San])
 

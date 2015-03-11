@@ -6,7 +6,7 @@ import hex.variant.Variant
 
 object UciDump {
 
-  // a2, b8, ...
+  // 1. a2 2. b8, ...
   def apply(replay: Replay): List[String] =
     replay.chronoMoves map {move => move.pos.key}
 

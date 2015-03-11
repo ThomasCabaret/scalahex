@@ -16,13 +16,13 @@ object Tag {
   case object Event extends TagType
   case object Site extends TagType
   case object Date extends TagType
-  case object White extends TagType
-  case object Black extends TagType
+  case object Red extends TagType
+  case object Blue extends TagType
   case object TimeControl extends TagType
-  case object WhiteClock extends TagType
-  case object BlackClock extends TagType
-  case object WhiteElo extends TagType
-  case object BlackElo extends TagType
+  case object RedClock extends TagType
+  case object BlueClock extends TagType
+  case object RedElo extends TagType
+  case object BlueElo extends TagType
   case object Result extends TagType
   case object FEN extends TagType
   case object Variant extends TagType
@@ -32,7 +32,7 @@ object Tag {
     override def toString = n
   }
 
-  val tagTypes = List(Event, Site, Date, White, Black, TimeControl, WhiteClock, BlackClock, WhiteElo, BlackElo, Result, FEN, Variant, ECO)
+  val tagTypes = List(Event, Site, Date, Red, Blue, TimeControl, RedClock, BlueClock, RedElo, BlueElo, Result, FEN, Variant, ECO)
   val tagTypesByLowercase = tagTypes map { t => t.lowercase -> t } toMap
 
   def apply(name: String, value: Any): Tag = new Tag(
@@ -45,5 +45,4 @@ object Tag {
 
   def tagType(name: String) =
     (tagTypesByLowercase get name.toLowerCase) | Unknown(name)
-
 }
