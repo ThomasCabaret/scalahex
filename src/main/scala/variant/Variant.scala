@@ -1,7 +1,7 @@
 package hex
 package variant
 
-import Pos.posAt
+//import Pos.posAt
 
 abstract class Variant(
     val id: Int,

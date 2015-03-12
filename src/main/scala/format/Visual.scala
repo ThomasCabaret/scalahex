@@ -1,7 +1,7 @@
 package hex
 package format
 
-import Pos.posAt
+//import Pos.posAt
 
 /**
  * r bqkb r
