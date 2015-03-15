@@ -1,5 +1,6 @@
 package hex
-//Describe a board, what is where
+//Describes a board, what is where
+//OK
 
 import variant.Variant
 import annotation.tailrec
@@ -24,6 +25,9 @@ case class Board (size: Int,
     pos.x >= 1 && pos.y >= 1 && pos.x <= size && pos.y <= size
   }
 
+  //Real surrounding position given this board size
+  def arround(pos: Pos): Set[Pos] = pos.surroundingPositions.filter( p => valid(p))
+
   //Build a set from pos in the direction dx dy until reaching the end of the board (used to compute sides)
   @tailrec private def project(pos: Pos, dx: Int, dy: Int, lineSet: Set[Pos]): Set[Pos] = {
     if (!valid(pos)) {
@@ -34,15 +38,11 @@ case class Board (size: Int,
     }
   }
 
-  lazy val leftSide: Set[Pos] = project(Pos(1, size), 0, -1, Set())
-  lazy val rightSide: Set[Pos] = project(Pos(size, size), 0, -1, Set())
-  lazy val topSide: Set[Pos] = project(Pos(size, 1), -1, 0, Set())
-  lazy val bottomSide: Set[Pos] = project(Pos(size, size), -1, 0, Set())
+  lazy val leftSide: Set[Pos] = project(Pos(1, 1), 0, 1, Set())
+  lazy val rightSide: Set[Pos] = project(Pos(size, 1), 0, 1, Set())
+  lazy val topSide: Set[Pos] = project(Pos(1, 1), 1, 0, Set())
+  lazy val bottomSide: Set[Pos] = project(Pos(1, size), 1, 0, Set())
 
-  //Real surrounding position given this board size
-  def arround(pos: Pos): Set[Pos] = pos.surroundingPositions.filter( p => valid(p))
-
-  //Compute if there is a path for one color for it's side to the other
   //Helper for 3 colors algorithm
   def stepPull(done: Set[Pos], pulled: Set[Pos], rest: Set[Pos]): (Set[Pos], Set[Pos], Set[Pos]) = {
   	val arroundPulled = (pulled map {x => arround(x)}).fold(Set())((p: Set[Pos], e: Set[Pos]) => p union e)

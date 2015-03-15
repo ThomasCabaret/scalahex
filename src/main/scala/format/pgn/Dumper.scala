@@ -1,5 +1,6 @@
 package hex
 package format.pgn
+//TODO waiting to decide which format we take for hex. Maybe standard sgf instead
 //I dont know what this is supposed to do
 
 object Dumper {

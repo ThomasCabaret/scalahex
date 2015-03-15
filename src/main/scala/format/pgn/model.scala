@@ -1,13 +1,15 @@
 package hex
 package format
 package pgn
+//Object model of a pgn
+//TODO waiting to decide which format we take for hex. Maybe standard sgf instead
 
 import scala._
 
 case class Pgn(
     tags: List[Tag],
     turns: List[Turn]) {
-
+/*
   def updateTurn(fullMove: Int, f: Turn => Turn) = {
     val index = fullMove - 1
     (turns lift index).fold(this) { turn =>
@@ -32,13 +34,14 @@ case class Pgn(
     turns mkString " ",
     tags find (_.name == Tag.Result) map (_.value) getOrElse ""
   ).trim
+*/
 }
 
 case class Turn(
     number: Int,
     white: Option[Move],
     black: Option[Move]) {
-
+/*
   def update(color: Color, f: Move => Move) = color.fold(
     copy(white = white map f),
     copy(black = black map f)
@@ -65,10 +68,11 @@ case class Turn(
     }
     s"$number.$text"
   }
+  */
 }
 
 object Turn {
-
+/*
   def fromMoves(moves: List[Move], ply: Int): List[Turn] = {
     moves.foldLeft((List[Turn](), ply)) {
       case ((turns, p), move) if p % 2 == 1 =>
@@ -79,6 +83,7 @@ object Turn {
         (t.copy(black = move.some) :: tt) -> (p + 1)
     }
   }._1.reverse
+  */
 }
 
 case class Move(
@@ -90,7 +95,7 @@ case class Move(
     variation: List[Turn] = Nil,
     // time left for the user who made the move, after he made it
     timeLeft: Option[Int] = None) {
-
+/*
   def isLong = comment.isDefined || variation.nonEmpty
 
   def timeString(time: Int) = Clock.timeString(time)
@@ -107,4 +112,5 @@ case class Move(
     val variationString = if (variation.isEmpty) "" else variation.mkString(" (", " ", ")")
     s"$san$nagSymbol$commentOrTime$variationString"
   }
+  */
 }

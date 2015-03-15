@@ -1,6 +1,6 @@
 package hex
 // Type of game casual, rated, etc...
-// Ok reserve design
+// Ok
 
 sealed abstract class Mode(val id: Int) {
 

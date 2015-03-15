@@ -1,5 +1,5 @@
 package hex
-//Produce a array of byte of the different pieces types, position and color.
+//Produce a array of byte of the pawns, position and color. Why?
 //TODO
 
 import java.security.MessageDigest

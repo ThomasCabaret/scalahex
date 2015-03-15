@@ -1,5 +1,7 @@
 package hex
 package format.pgn
+// TODO waiting to decide which format we take for hex. Maybe standard sgf instead
+// Details about the game in the pgn format (players, etc...)
 
 case class Tag(name: TagType, value: String) {
 

@@ -1,8 +1,6 @@
 package hex
 package variant
 
-//import Pos.posAt
-
 abstract class Variant(
     val id: Int,
     val key: String,
@@ -33,4 +31,3 @@ object Variant {
 
   def exists(id: Int): Boolean = byId contains id
 }
-

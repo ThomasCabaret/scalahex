@@ -1,10 +1,10 @@
 package hex
 package format.pgn
-
 import scala.util.Try
+//TODO waiting to decide which format we take for hex. Maybe standard sgf instead
 
 object Binary {
-
+/*
   def writeMove(m: String) = Try(Writer move m)
   def writeMoves(ms: List[String]) = Try(Writer moves ms)
 
@@ -184,4 +184,5 @@ object Binary {
 
   @inline private def toInt(b: Byte): Int = b & 0xff
   private def showByte(b: Int): String = "%08d" format (b.toBinaryString.toInt)
+  */
 }

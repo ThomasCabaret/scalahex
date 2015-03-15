@@ -1,6 +1,6 @@
 package hex
 //Type of game speed Bullet, Blitz, Classical etc...
-//OK reserve Enum question
+//OK (see values)
 
 sealed abstract class Speed(
     val id: Int,

@@ -1,6 +1,5 @@
 package hex
 //A move, just putting a pawn red or blue somewhere
-//Color ? boardbefore boardafter in the scalachess, why?
 
 import scala.concurrent.duration._
 

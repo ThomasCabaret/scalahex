@@ -1,6 +1,6 @@
 package hex
 //Technical status of a game, created, started, resigned etc...
-//OK reserve Enum question
+//OK
 
 sealed abstract class Status(val id: Int) extends Ordered[Status] {
 
@@ -26,7 +26,7 @@ object Status {
   val all = List(Created, Started, Aborted, ConnectedWin, Resign, Timeout, Outoftime)
 
   val finished = all filter { s =>
-    s.id >= ConnectedWin.id
+    s.id >= Aborted.id
   }
 
   val finishedWithWinner = List(ConnectedWin, Resign, Timeout, Outoftime)

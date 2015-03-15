@@ -1,6 +1,7 @@
 package hex
 package format.pgn
-//Its the pgn parser
+// TODO waiting to decide which format we take for hex. Maybe standard sgf instead
+//Its the pgn parser, produce a pgn model from a string?
 
 import variant.Variant
 

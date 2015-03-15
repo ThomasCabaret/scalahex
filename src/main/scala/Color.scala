@@ -1,6 +1,5 @@
 package hex
-// Why is this thing so complex and so big?
-// Ok reserve design
+// Ok
 
 sealed trait Color {
 
@@ -19,13 +18,13 @@ sealed trait Color {
 
 object Color {
 
-  case class Map[A](red: A, blue: A) {
-    def apply(color: Color) = if (color.red) red else blue
-  }
+  //case class Map[A](red: A, blue: A) {
+  //  def apply(color: Color) = if (color.red) red else blue
+  //}
 
-  object Map {
-    def apply[A](f: Color => A): Map[A] = Map(red = f(Red), blue = f(Blue))
-  }
+  //object Map {
+  //  def apply[A](f: Color => A): Map[A] = Map(red = f(Red), blue = f(Blue))
+  //}
 
   case object Red extends Color {
 
@@ -55,8 +54,8 @@ object Color {
     else if (c == 'b') Some(Blue)
     else None
 
-  val red: Color = Red
-  val blue: Color = Blue
+  //val red: Color = Red
+  //val blue: Color = Blue
 
   val all = List(Red, Blue)
 
@@ -64,4 +63,3 @@ object Color {
 
   def exists(name: String) = all exists (_.name == name)
 }
-

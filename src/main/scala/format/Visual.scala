@@ -1,26 +1,25 @@
 package hex
 package format
 
-//import Pos.posAt
-
 /**
- * r bqkb r
- * p ppp pp
- * pr
- *    P p
- *    QnB
- *  PP  N
- * P    PPP
- * RN  K  R
+ * O O O O O O O
+ *  O O O O O O O
+ *   O O R O O O O
+ *    O O O R B O O
+ *     O O O B O O O
+ *      O O O O O O O
+ *       O O O O O O O
+ *        O O O O O O O
  */
 object Visual {
 
+  //TODO
   /*def <<(source: String): Board = {
     val lines = source.lines.toList
+    val size = lines.size
     val filtered = lines.size match {
-      case 8          => lines
-      case n if n > 8 => lines drop 1 take 8
-      case n          => (List.fill(8 - n)("")) ::: lines
+      case size => lines
+      case n    => (List.fill(size - n)("")) ::: lines
     }
     Board(
       pieces = (for {
@@ -28,7 +27,7 @@ object Visual {
         (l, y) = line
         char ← (l zipWithIndex)
         (c, x) = char
-        role ← Role forsyth c.toLower
+        color ← Color (c.toLower)
       } yield {
         posAt(x + 1, 8 - y) map { pos => pos -> (Color(c isUpper) - role) }
       }) flatten,
@@ -36,8 +35,10 @@ object Visual {
     )
   }*/
 
+  //TODO
   //def >>(board: Board): String = >>|(board, Map.empty)
 
+  //TODO
   /*def >>|(board: Board, marks: Map[Iterable[Pos], Char]): String = {
     val markedPoss: Map[Pos, Char] = marks.foldLeft(Map[Pos, Char]()) {
       case (marks, (poss, char)) => marks ++ (poss.toList map { pos => (pos, char) })
@@ -49,5 +50,5 @@ object Visual {
     } mkString
   } map { """\s*$""".r.replaceFirstIn(_, "") } mkString "\n"*/
 
-  def addNewLines(str: String) = "\n" + str + "\n"
+  //def addNewLines(str: String) = "\n" + str + "\n"
 }

@@ -3,8 +3,6 @@ package hex
 
 import scala.concurrent.duration._
 
-//import format.pgn
-
 case class Game(
     board: Board,
     player: Color = Red,
@@ -30,8 +28,6 @@ case class Game(
   }
 
   def swap() = copy(swapped = true)
-
-  //def isStandardInit = board.pawns == Nil
 }
 
 object Game {

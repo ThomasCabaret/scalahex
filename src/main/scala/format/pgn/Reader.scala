@@ -1,8 +1,9 @@
 package hex
 package format.pgn
+// TODO waiting to decide which format we take for hex. Maybe standard sgf instead
+// Produces a game of a replay from a pgn?
 
-//import format.Forsyth
-
+//TODO
 object Reader {
 
   /*def full(pgn: String, tags: List[Tag] = Nil): Valid[Replay] =
